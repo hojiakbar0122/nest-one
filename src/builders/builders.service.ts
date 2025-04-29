@@ -13,7 +13,7 @@ export class BuildersService {
   
   async create(createBuilderDto: CreateBuilderDto) {
     const {companyId} = createBuilderDto
-    const company = await this.companyService.findOneCompany(companyId)
+    const company = await this.companyService.findOne(companyId)
     if(!company){
       throw new BadRequestException("Bunday kompaniya mavjud emas")
     } 

@@ -12,7 +12,7 @@ export class EmployeesService {
   ){}
   async create(createEmployeeDto: CreateEmployeeDto) {
     const {companyId} = createEmployeeDto
-    const company = await this.companyService.findOneCompany(companyId)
+    const company = await this.companyService.findOne(companyId)
     if(!company){
       throw new BadRequestException("Bunday kompaniya mavjud emas")
     } 

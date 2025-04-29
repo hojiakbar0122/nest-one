@@ -14,7 +14,7 @@ export class MashinesService {
   ){}
   async create(createMashineDto: CreateMashineDto, image:any) {
     const {companyId} = createMashineDto
-    const company = await this.companyService.findOneCompany(companyId)
+    const company = await this.companyService.findOne(companyId)
     if(!company){
       throw new BadRequestException("Bunday kompaniya mavjud emas")
     } 
